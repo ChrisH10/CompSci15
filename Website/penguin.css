@@ -1,0 +1,390 @@
+/*
+    Document   : penguin.css
+    Created on : 2015-02-25 06:19 PM
+    Author     : ChrisH
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+#container div {
+    display: inline-block;
+}
+
+body {
+	background-color: #79E5E5;
+}
+
+#GamePenguin {
+  width:  1000px; /*or 70%, or what you want*/
+  height: 200px; /*or 70%, or what you want*/
+  margin-top: 25px;
+  margin-left: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+#penguin1:hover {
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin1:active {
+    background-image:url('http://i.imgur.com/icClvaX.png')
+  
+        
+}
+
+#penguin1 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+   
+}
+
+#penguin2:hover {
+     width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin2:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')
+        
+}
+
+#penguin2 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin3:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin3:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin3 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin4:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin4:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+#penguin4 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin5:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin5:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin5 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png')
+}
+
+#penguin6:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin6:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin6 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin7:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin7:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin7 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+#penguin8:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin8:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin8 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin9:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin9:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin9 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin10:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin10:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin10 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+
+#penguin11:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin11:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin11 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+
+#penguin12:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin12:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin12 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+
+#penguin13:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin13:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin13 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+
+#penguin14:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin14:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin14 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin15:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin15:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin15 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin16:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin16:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin16 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#penguin17:hover {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor: pointer;
+}
+
+#penguin17:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/icClvaX.png')       
+}
+
+#penguin17 {
+    width: 157px;
+    height: 109px;
+    float: right;
+    background-image:url('http://i.imgur.com/5IQVX7h.png');
+}
+
+#monster:hover{
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/nQ1CECH.jpg');
+    cursor:pointer;
+}
+
+#monster:active {
+    width: 157px;
+    height: 109px;
+    background-image:url('http://i.imgur.com/RhFLlUl.jpg')       
+}
+
+#monster {
+	width: 157px;
+	height: 109px;
+	float: right;
+	background-image:url('http://i.imgur.com/5IQVX7h.png') ;
+	

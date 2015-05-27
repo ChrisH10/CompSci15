@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="aboutme.css" type="text/css" />
+<meta charset="utf-8">
+<title>HTML Site</title>
+</head>
+
+<body>
+	
+	
+	<body1>
+
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<!-- Save for Web Slices (Untitled-1) -->
+	<a href="HomePage.html"><img src="http://i.imgur.com/RgCN588.jpg" width="193" height="48" alt="">
+	<body>
+	
+	<bodyabout bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<!-- Save for Web Slices (Untitled-1) -->
+	<a href="Index.html"><img src="http://i.imgur.com/uAO4obm.jpg" width="194" height="48" border="0" alt=""></a>
+	<!-- End Save for Web Slices -->
+	</bodyabout>
+	
+	<bodyhtml bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (Untitled-1) -->
+<a href="HTML.html"><img src="http://i.imgur.com/lhiqxSk.jpg" width="193" height="48" alt="">
+<!-- End Save for Web Slices -->
+	</bodyhtml>
+	
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<a href="Hardware.html"><img src="http://i.imgur.com/xaKAxkO.jpg" width="193" height="48"></a>
+		<!-- End Save for Web Slices -->
+	
+    <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<a href="Vindinium.html"><img src="http://i.imgur.com/7S7Ctaut.png" width="193" height="48"></a>
+		<!-- End Save for Web Slices -->
+	    
+        
+        
+	</body1>
+
+	<div style="text-align:center">
+<hr width=100% align=left>
+<h1 style="font-size:30px"> <strong>Vindinium</strong> <h1>
+	<p style="font-size:20px"> Vindinium is an AI program that allows you to code bots who fight against each other. </p>
+	<p1 style="font-size:15px"> You can code your bot in a variety of different languages. For ths project, I used Node JS.</p1>
+	
+	<h2> How to play Vindinium: </h2>
+	<img src="http://media.giphy.com/media/3oEdv1U273vpEPUtP2/giphy.gif" /> <!--CREDIT TO ME FOR IMAGE -->
+
+	<p>Test</p>
+
+</div>
+<hr width=100% align=left>
+<div style="text-align:center">
+<h1 style="font-size:30px"> <strong> My Bot </strong> <h1>
+	<p style="font-size:20px"> My Bot's Code: </p>
+	<p1 style="font-size:9px">
+    
+    <div id="codeSpace">
+            <div id="code">
+                <code>
+                <pre>
+var Bot = require('bot');
+var PF = require('pathfinding');
+var bot = new Bot('5chdwzrj', 'arena', 'http://52.8.116.125:9000'); //Put your bot's code here and change training to Arena when you want to fight others.
+//var bot = new Bot('pbelz3dr', 'arena', 'http://vindinium.org'); //Put your bot's code here and change training to Arena when you want to fight others.
+var goDir;
+var Promise = require('bluebird');
+Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+        /* Write your bot below Here */
+        /* Set `bot.goDir` in the direction you want to go */
+        // Bots
+        var bots = [];
+        if(bot.yourBot.id != 1 && !bot.data.game.heroes[0].crashed) bots.push(bot.bot1);
+        if(bot.yourBot.id != 2 && !bot.data.game.heroes[1].crashed) bots.push(bot.bot2);
+        if(bot.yourBot.id != 3 && !bot.data.game.heroes[2].crashed) bots.push(bot.bot3);
+        if(bot.yourBot.id != 4 && !bot.data.game.heroes[3].crashed) bots.push(bot.bot4);
+        
+        var enemyMines = [];
+        if(bot.yourBot.id != 1) enemyMines = enemyMines.concat(bot.bot1mines);
+        if(bot.yourBot.id != 2) enemyMines = enemyMines.concat(bot.bot2mines);
+        if(bot.yourBot.id != 3) enemyMines = enemyMines.concat(bot.bot3mines);
+        if(bot.yourBot.id != 4) enemyMines = enemyMines.concat(bot.bot4mines);
+        
+        // myPos - My Position. States my X & Y Coordinates.
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+        // var closestMine- The closest mine that is free to myPos.
+        var closestMine = bot.freeMines[0];
+        // closestTavern - Closest Tavern to myPos
+        var closestTavern = bot.taverns[0];
+        // Directions on compass used to make bot nagivate.
+        var dirs = ["north", "east", "south", "west"];
+        //free mines -  Makes my bot go to the closest Free Mine (not taken by an enemy) and capture it. Tells me if closest mine is farther away, just free mine.
+        for(i = 0; i < bot.freeMines.length; i++) {
+            if(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                closestMine = bot.freeMines[i];
+            }
+        }
+        var closestEnemyMine = enemyMines[0];
+        
+        // If bot's health is above 25, then go to the closestMine. Otherwise, go to a tavern.
+        if(bot.yourBot.life > 25) {
+            bot.goDir = bot.findPath(myPos, closestMine);
+        } else if(bot.yourBot.life < 25) {
+            for(i = 0; i < bot.taverns.length; i++) {
+                if(bot.findDistance(closestTavern, myPos) > bot.findDistance(myPos, bot.taverns[i])) {
+                    closestTavern = bot.taverns[i];
+                }
+            }
+        }
+      
+
+        
+        // Make bot go to closestMine or enemyMines if goDir(direction) is equal to none. Only is executed when the position is within a raduius of 8 and the life of my bot is greater than 25.
+        if(bot.goDir == "none")
+            for(i = 0; i < bots.length; i++) {
+                if(bot.findDistance(myPos, [bots[i].pos.x, bots[i].pos.y]) < 15) {
+                    bot.goDir = bot.findPath(myPos, [bots[i].pos.x, bots[i].pos.y]);
+                } else(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, enemyMines[i]));
+                closestMine = enemyMines[i];
+            }
+            
+            
+            //PVP - This makes my bot fight other bots that are closeby if they are in a radius of 10 and THEIR health is less than 25. Otherwise, the code is not executed.
+        for(i = 0; i < bots.length; i++) {
+            if(bot.findDistance(myPos, [bots[i].pos.x, bots[i].pos.y]) < 10 && bots[i].life < 25) {
+                bot.goDir = bot.findPath(myPos, [bots[i].pos.x, bots[i].pos.y]);
+            }
+            console.log("PVP");
+        }
+        /* DONT REMOVE ANTYTHING BELOW THIS LINE */
+        resolve();
+    });
+}
+bot.runGame();
+                
+                </pre>
+            
+                </code>
+            </div>
+        </div>
+    
+    
+    </p1>
+	
+	<h2> How the code works: </h2>
+
+<pre>
+var Bot = require('bot');
+var PF = require('pathfinding');
+var bot = new Bot('5chdwzrj', 'arena', 'http://52.8.116.125:9000'); //Put your bot's code here and change training to Arena when you want to fight others.
+//var bot = new Bot('pbelz3dr', 'arena', 'http://vindinium.org'); //Put your bot's code here and change training to Arena when you want to fight others.
+var goDir;
+var Promise = require('bluebird');
+Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+</pre>
+      <p> The code above is for the bot to enter the game. The first new bot is going to the private server and the second bot can go to the vindinium server instead.</p>
+
+            <pre>
+var bots = [];
+        if(bot.yourBot.id != 1 && !bot.data.game.heroes[0].crashed) bots.push(bot.bot1);
+        if(bot.yourBot.id != 2 && !bot.data.game.heroes[1].crashed) bots.push(bot.bot2);
+        if(bot.yourBot.id != 3 && !bot.data.game.heroes[2].crashed) bots.push(bot.bot3);
+        if(bot.yourBot.id != 4 && !bot.data.game.heroes[3].crashed) bots.push(bot.bot4);
+        var enemyMines = [];
+        if(bot.yourBot.id != 1) enemyMines = enemyMines.concat(bot.bot1mines);
+        if(bot.yourBot.id != 2) enemyMines = enemyMines.concat(bot.bot2mines);
+        if(bot.yourBot.id != 3) enemyMines = enemyMines.concat(bot.bot3mines);
+        if(bot.yourBot.id != 4) enemyMines = enemyMines.concat(bot.bot4mines);
+</pre>
+            <p>This set allows the game to identify the bots on the map and set variables to them which can be later called though later code. </p>
+           
+    
+    <pre>
+    // myPos - My Position. States my X & Y Coordinates.
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+        // var closestMine- The closest mine that is free to myPos.
+        var closestMine = bot.freeMines[0];
+        // closestTavern - Closest Tavern to myPos
+        var closestTavern = bot.taverns[0];
+        // Directions on compass used to make bot nagivate.
+        var dirs = ["north", "east", "south", "west"];   
+    </pre>
+ <p> The code above shows the user the variables used by my code besides the Bot variables. ClosestTavern and Mine find the nearest of those objects to my bot.</p>
+    
+    
+<hr width=100% align=left>
+<h1 style="font-size:30px"> <strong>Tags & Attributes Examples:</strong> <h1>
+		<p style="font-size:20px">  </p>
+		
+		<ol style="font-size:15px"> Tags:
+			<li>"!DOCTYPE" 	Defines the document type</li>
+			<li>"a"	Defines a hyperlink</li>
+			<li>"abbr"	Defines an abbreviation</li>
+		
+		</ol>
+		
+		<ol style="font-size:15px"> Attributes:
+			<li>"id" 	Unique id for element</li>
+			<li>"href"	Specifies URL Link</li>
+			<li>"src"	Specifies URL for image</li>
+		
+		</ol>
+		
+<hr width=100% align=left>
+
+<script type="text/javascript">
+
+function GetClock(){
+d = new Date();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+     if(nhour ==  0) {ap = " AM";nhour = 12;} 
+else if(nhour <= 11) {ap = " AM";} 
+else if(nhour == 12) {ap = " PM";} 
+else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+<div id="clockbox" style="text-align: center;font-size:15px"></div>
+
+
+
+	
+</body>
+</html>

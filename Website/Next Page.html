@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="aboutme.css" type="text/css" />
+<meta charset="utf-8">
+<title>Next Page</title>
+</head>
+
+<body1>
+
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<!-- Save for Web Slices (Untitled-1) -->
+	<a href="http://10.8.16.42/christopherh/HomePage.html"><img src="images/Tile!.jpg" width="193" height="48" alt="">
+	<body>
+	
+	<bodyabout bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<!-- Save for Web Slices (Untitled-1) -->
+	<a href="http://10.8.16.42/christopherh/Index.html"><img src="images/aboutme.jpg" width="194" height="48" border="0" alt=""></a>
+	<!-- End Save for Web Slices -->
+	</bodyabout>
+	
+	<bodyhtml bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (Untitled-1) -->
+<a href="http://10.8.16.42/christopherh/HTML.html"><img src="images/HTML.jpg" width="193" height="48" alt="">
+<!-- End Save for Web Slices -->
+	</bodyhtml>
+	
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<a href="http://10.8.16.42/christopherh/Hardware.html"><img src="images/Hardware.jpg" width="193" height="48"></a>
+		<!-- End Save for Web Slices -->
+	
+	
+</body>
+<hr width=100% align=left>
+
+
+	<h1> Welcome! <h1>
+		<h3>You can access other pages by using the Navigation Bar above. </h3>
+		<div style="text-align:center">
+		<h4>Learn More About Computer Science Class:</h4>
+		
+		<input class="spoilerbutton" type="button" value="About This Class" onclick="this.value=this.value=='About This Class'?'Hide':'About This Class';">
+		<div class="spoiler"> <div>
+ <p style="font-size:15px">This Computer Science class is located at Summit Prepratory Charter High School. Summit is located in Redwood City,California.</p>
+</div></div>
+<div class="content" style="display:none;color:grey:align-center:">Spoiler</div>
+</div>
+<div style="text-align:center">
+<input class="spoilerbutton1" type="button" value="Purpose of This Class" onclick="this.value=this.value=='Purpose of This Class'?'Hide':'Purpose of This Class';">
+<div class="spoiler"><div>
+	<p style="font-size:15px"> This class's purpose is to teach you how to use Computers and learn coding, such as CSS and HTML. By the end of this class, I am hoping to fully master coding in multiple languages while understanding more advanced technology. </p>
+</div></div>
+<div class="content" style="display:none;color:grey;">Spoiler</div>
+</div>
+
+<hr width=100% align=left>
+
+<script type="text/javascript">
+
+function GetClock(){
+d = new Date();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+     if(nhour ==  0) {ap = " AM";nhour = 12;} 
+else if(nhour <= 11) {ap = " AM";} 
+else if(nhour == 12) {ap = " PM";} 
+else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+<div id="clockbox" style="text-align: center;"></div>
+
+
+</body1>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="aboutme.css" type="text/css" />
+<meta charset="utf-8">
+<title>HTML Site</title>
+</head>
+
+<body>
+	
+	
+	<body1>
+
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<!-- Save for Web Slices (Untitled-1) -->
+	<a href="HomePage.html"><img src="http://i.imgur.com/RgCN588.jpg" width="193" height="48" alt="">
+	<body>
+	
+	<bodyabout bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+	<!-- Save for Web Slices (Untitled-1) -->
+	<a href="Index.html"><img src="http://i.imgur.com/uAO4obm.jpg" width="194" height="48" border="0" alt=""></a>
+	<!-- End Save for Web Slices -->
+	</bodyabout>
+	
+	<bodyhtml bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (Untitled-1) -->
+<a href="HTML.html"><img src="http://i.imgur.com/lhiqxSk.jpg" width="193" height="48" alt="">
+<!-- End Save for Web Slices -->
+	</bodyhtml>
+	
+	<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<a href="Hardware.html"><img src="http://i.imgur.com/xaKAxkO.jpg" width="193" height="48"></a>
+		<!-- End Save for Web Slices -->
+	
+	</body1>
+
+	<div style="text-align:center">
+<hr width=100% align=left>
+<h1 style="font-size:30px"> <strong>HTML</strong> <h1>
+	<p style="font-size:20px"> HTML stands for HyperText Markup Language. </p>
+	<p1 style="font-size:15px"> HTML was created in 1993 and is currently on it's fifth release, HTML 5.0. It was developed by W3C & WHATWG.</p1>
+	
+	<h2> This is how HTML 5.0 is setup: </h2>
+	<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/84/HTML.svg/266px-HTML.svg.png" /> <!--CREDIT TO WIKIPEDIA COMMONS FOR IMAGE -->
+
+	<li>"Head" stands for Header</li> 
+	<li>"Body" stands for Body of paragraph</li>
+	<li>"P" stands for Paragraph </li>
+	<li>HTML tag inside the code stands for where the text is assigned to be HTML code.</li>
+
+</div>
+<hr width=100% align=left>
+<div style="text-align:center">
+<h1 style="font-size:30px"> <strong> CSS</strong> <h1>
+	<p style="font-size:20px"> CSS stands for Cascading Style Sheets. </p>
+	<p1 style="font-size:15px"> CSS was created in December 17 1996 and is currently on it's third revision, CSS Level 2 Revision 1. It was developed by Bert Bos and Håkon Wilum Lie.It's currently being maintained by W3C.</p1>
+	
+	<h2> This is how CSS is setup: </h2>
+	
+	<img src="http://upload.wikimedia.org/wikipedia/en/thumb/9/93/CSS-shade.svg/275px-CSS-shade.svg.png" />
+	
+	<li>"h1" represents the Header #1 that was used in the HTML code that needs editing in CSS. Inside the code, tags that are used in "STYLE" in HTML are used in CSS. </li>
+	<li>"Body" represents the body paragraph in the HTML code that needs it's "STYLE" edtied.</li>
+
+
+<hr width=100% align=left>
+<h1 style="font-size:30px"> <strong> What are Tags & Attributes?</strong> <h1>
+		<p style="font-size:20px">  </p>
+		<p1 style="font-size:15px"> Tags are elements that are used to define a type of code that is placed between the tags. For instance, "P" tag is used to define that there is a paragraph of text placed in between the element and should be treated as a plain text file. </p1>
+		<p style="font-size:15px">Attributes are used in HTML to sort similar elements together. For instance, the "Title" attribute is used to give context to all of the elements in the HTML code.</p>
+		
+<hr width=100% align=left>
+<h1 style="font-size:30px"> <strong>Tags & Attributes Examples:</strong> <h1>
+		<p style="font-size:20px">  </p>
+		
+		<ol style="font-size:15px"> Tags:
+			<li>"!DOCTYPE" 	Defines the document type</li>
+			<li>"a"	Defines a hyperlink</li>
+			<li>"abbr"	Defines an abbreviation</li>
+		
+		</ol>
+		
+		<ol style="font-size:15px"> Attributes:
+			<li>"id" 	Unique id for element</li>
+			<li>"href"	Specifies URL Link</li>
+			<li>"src"	Specifies URL for image</li>
+		
+		</ol>
+		
+<hr width=100% align=left>
+
+<script type="text/javascript">
+
+function GetClock(){
+d = new Date();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+     if(nhour ==  0) {ap = " AM";nhour = 12;} 
+else if(nhour <= 11) {ap = " AM";} 
+else if(nhour == 12) {ap = " PM";} 
+else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+<div id="clockbox" style="text-align: center;font-size:15px"></div>
+
+
+
+	
+</body>
+</html>
