@@ -49,7 +49,15 @@
 	<h2> How to play Vindinium: </h2>
 	<img src="http://media.giphy.com/media/3oEdv1U273vpEPUtP2/giphy.gif" /> <!--CREDIT TO ME FOR IMAGE -->
 
-	<p>Test</p>
+	<p>
+    <li>1. Know Javascript</li>
+        
+    <li>2. Go to Vindinium.com and "create a bot". Remember the key you get after creating the bot!</li>
+        
+    <li>3. Create two Javascript files (Stable.js & Test.js)</li>
+          
+    <li>4. Code in the Test.js and then once it works, copy it to Stable.js and then test it on Vindinium.</li>
+    </p>
 
 </div>
 <hr width=100% align=left>
@@ -188,27 +196,57 @@ var bots = [];
         var dirs = ["north", "east", "south", "west"];   
     </pre>
  <p> The code above shows the user the variables used by my code besides the Bot variables. ClosestTavern and Mine find the nearest of those objects to my bot.</p>
+ 
+        
+        <pre>
+          //free mines -  Makes my bot go to the closest Free Mine (not taken by an enemy) and capture it. Tells me if closest mine is farther away, just free mine.
+        for(i = 0; i < bot.freeMines.length; i++) {
+            if(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                closestMine = bot.freeMines[i];
+            }
+        }
+        var closestEnemyMine = enemyMines[0];
+        
+        // If bot's health is above 25, then go to the closestMine. Otherwise, go to a tavern.
+        if(bot.yourBot.life > 25) {
+            bot.goDir = bot.findPath(myPos, closestMine);
+        } else if(bot.yourBot.life < 25) {
+            for(i = 0; i < bot.taverns.length; i++) {
+                if(bot.findDistance(closestTavern, myPos) > bot.findDistance(myPos, bot.taverns[i])) {
+                    closestTavern = bot.taverns[i];
+                }
+            }
+        }
+        </pre>
+    <p> 
+    This piece of code shows how to make my bot go to the closest Free Mine and Capture it. The next line of code makes the bot go to either a ClosestMine or Tavern.
+    </p>
     
+    <pre>
+    // Make bot go to closestMine or enemyMines if goDir(direction) is equal to none. Only is executed when the position is within a raduius of 8 and the life of my bot is greater than 25.
+        if(bot.goDir == "none")
+            for(i = 0; i < bots.length; i++) {
+                if(bot.findDistance(myPos, [bots[i].pos.x, bots[i].pos.y]) < 15) {
+                    bot.goDir = bot.findPath(myPos, [bots[i].pos.x, bots[i].pos.y]);
+                } else(bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, enemyMines[i]));
+                closestMine = enemyMines[i];
+            }
+            
+            
+            //PVP - This makes my bot fight other bots that are closeby if they are in a radius of 10 and THEIR health is less than 25. Otherwise, the code is not executed.
+        for(i = 0; i < bots.length; i++) {
+            if(bot.findDistance(myPos, [bots[i].pos.x, bots[i].pos.y]) < 10 && bots[i].life < 25) {
+                bot.goDir = bot.findPath(myPos, [bots[i].pos.x, bots[i].pos.y]);
+            }
+            console.log("PVP"); 
+    </pre>
     
-<hr width=100% align=left>
-<h1 style="font-size:30px"> <strong>Tags & Attributes Examples:</strong> <h1>
-		<p style="font-size:20px">  </p>
-		
-		<ol style="font-size:15px"> Tags:
-			<li>"!DOCTYPE" 	Defines the document type</li>
-			<li>"a"	Defines a hyperlink</li>
-			<li>"abbr"	Defines an abbreviation</li>
-		
-		</ol>
-		
-		<ol style="font-size:15px"> Attributes:
-			<li>"id" 	Unique id for element</li>
-			<li>"href"	Specifies URL Link</li>
-			<li>"src"	Specifies URL for image</li>
-		
-		</ol>
-		
-<hr width=100% align=left>
+    <p style="page-break-after:always;">
+   This explains that my bot will go to the closestMine if it doesn't have anything to do. The other half of the code does PVP against enemies.
+    
+    </p >
+    
+   
 
 <script type="text/javascript">
 
